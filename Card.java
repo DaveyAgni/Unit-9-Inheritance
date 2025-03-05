@@ -1,8 +1,3 @@
-//(c) A+ Computer Science
-//www.apluscompsci.com
-//Name -
-//Date -
-
 public class Card
 {
 	public static final String FACES[] = {"ZERO","ACE","TWO","THREE","FOUR",
@@ -12,23 +7,56 @@ public class Card
 	private int face;
 
   	//constructors
+	public Card()
+	{
+		face = 0;
+		suit = "";
+	}
 
+	public Card(String s, int f)
+	{
+		face = f;
+		suit = s;
+	}
 
 	// modifiers
+	public void changeSuit(String s)
+	{
+		suit = s;
+	}
 
+	public void changeFace(int f)
+	{
+		face = f;
+	}
 
   	//accessors
+	public String getSuit()
+	{
+		return suit;
+	}
 
   	public int getValue()
   	{
+		String fac  = FACES[face];
   		return face;
   	}
 
-	public boolean equals(Object obj)
+	public boolean equals(Card obj)
 	{
-		return false;
+		if(obj.getValue() == face && obj.getSuit().equals(suit))
+		{
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 
   	//toString
+	public String toString()
+	{
+		return (FACES[face] + " of " + getSuit() + " | value = " + getValue());
+	}
   	
  }
