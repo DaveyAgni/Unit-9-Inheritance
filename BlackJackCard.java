@@ -1,21 +1,31 @@
-public class BlackJackCard extends Card
+import static java.lang.System.*;
+import java.awt.Color;
+
+public class CardTestOne
 {
-  	//constructors
-	public BlackJackCard()
+	public static void main( String args[] )
 	{
-		super();
+		Card one = new BlackJackCard();
+		out.println(one);
+
+		Card two = new BlackJackCard(1,"DIAMONDS");
+		out.println(two);
+
+		Card three = new BlackJackCard(4,"CLUBS");
+		out.println(three);
+		
+		Card four = new BlackJackCard(12,"SPADES");
+		out.println(four);
+	
+		Card five = new BlackJackCard(12,"HEARTS");
+		out.println(five);	
+		
+		Card six = new BlackJackCard(9,"SPADES");
+		out.println(six);				
+
+		out.println(one.equals(two));
+		out.println(one.equals(one));		
+		out.println(four.equals(five));	
+		out.println(three.equals(four));						
 	}
-
-	public BlackJackCard(int f, String s)
-	{
-		super(s,f);
-	}
-
-
-  	public int getValue()
-  	{
-  		int v = super.getValue();
-		return v;
-  	}
-  	
- }
+}
